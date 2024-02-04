@@ -40,6 +40,13 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+        # 3 gradle ccommands for ANdroid apk building
+      - name: Build and Test with Gradle
+        run: |
+          ./gradlew assembleDebug
 
 
       # Runs a set of commands using the runners shell
