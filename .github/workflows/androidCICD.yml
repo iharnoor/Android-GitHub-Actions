@@ -47,6 +47,12 @@ jobs:
         run: |
           ./gradlew assembleDebug
 
+      - name: 'Upload Artifact - APK'
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-artifact
+          path: app/build/outputs/apk/my_app.apk
+          retention-days: 5
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
